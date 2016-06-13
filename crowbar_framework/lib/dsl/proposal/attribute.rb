@@ -264,10 +264,10 @@ module Dsl
         end
       end
 
-      def grouping(options = {})
+      def grouping(options = {}, &block)
         content_tag(
           :div,
-          yield,
+          block.call,
           { class: "form-group" }.merge(options || {})
         )
       end
